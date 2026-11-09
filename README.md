@@ -1,10 +1,10 @@
-# A100Mimic
+# A100Supermimic
 
 English · [简体中文](README_zh-CN.md)
 
 An unofficial, A100 40 GB-focused engineering derivative of [RealMimic](https://github.com/kevinhenryzz/realmimic), an open implementation of the [SuperMimic](https://supermimic.github.io/) world-model motion-tracking method. One policy controls a simulated Unitree G1 while tracking reference motions. This project is independent of the paper's authors and does not claim an exact reproduction of their evaluation protocol.
 
-**Status: early release.** The full-library training run completed on one A100 40 GB. A complete re-evaluation and external LAFAN1 test passed our strict simulation-flag checks using the candidate solver settings reported below. A separate environment passed installation, a synthetic GPU fresh/resume check and an eight-motion evaluation entry-point check. The documented training CLI passed a synthetic fresh-and-warm-resume GPU check; the complete fresh-environment data download and full-training workflow have not been independently repeated. No A100Mimic weights have been published yet.
+**Status: early release.** The full-library training run completed on one A100 40 GB. A complete re-evaluation and external LAFAN1 test passed our strict simulation-flag checks using the candidate solver settings reported below. A separate environment passed installation, a synthetic GPU fresh/resume check and an eight-motion evaluation entry-point check. The documented training CLI passed a synthetic fresh-and-warm-resume GPU check; the complete fresh-environment data download and full-training workflow have not been independently repeated. No A100Supermimic weights have been published yet.
 
 ## Our experiment
 
@@ -34,8 +34,8 @@ During training, the log recorded 58 reporting intervals with a constraint-capac
 Clone this repository, then from the project directory:
 
 ```bash
-git clone https://github.com/Hzzzzs/A100Mimic.git
-cd A100Mimic
+git clone https://github.com/Hzzzzs/A100Supermimic.git
+cd A100Supermimic
 uv sync --frozen
 uv run hf auth login
 # Accept the BONES-SEED terms and wait for access before downloading.
@@ -78,7 +78,7 @@ The report refuses incomplete, duplicate, nonfinite or simulation-flagged result
 
 ## Origin and licenses
 
-A100Mimic derives from RealMimic commit `61f2973f6426255a8c844d6ca0c894eff4d8f45c`, which incorporates MIT-licensed `Supermimic_mod`. See [UPSTREAM.md](UPSTREAM.md), [NOTICE](NOTICE), [LICENSE](LICENSE), and [LICENSES](LICENSES/). The original upstream README and its results are retained in [docs/REALMIMIC_UPSTREAM_README.md](docs/REALMIMIC_UPSTREAM_README.md); those results and media are not A100Mimic experiments.
+A100Supermimic derives from RealMimic commit `61f2973f6426255a8c844d6ca0c894eff4d8f45c`, which incorporates MIT-licensed `Supermimic_mod`. See [UPSTREAM.md](UPSTREAM.md), [NOTICE](NOTICE), [LICENSE](LICENSE), and [LICENSES](LICENSES/). The original upstream README and its results are retained in [docs/REALMIMIC_UPSTREAM_README.md](docs/REALMIMIC_UPSTREAM_README.md); those results and media are not A100Supermimic experiments.
 
 BONES-SEED, LAFAN1, third-party assets, upstream model weights and any weights trained on restricted data have their own terms; the code license does not grant rights to redistribute them. Our future model release will state its applicable terms separately.
 

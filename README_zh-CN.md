@@ -1,8 +1,8 @@
-# A100Mimic
+# A100Supermimic
 
 [English](README.md) · 简体中文
 
-A100Mimic 是基于 [RealMimic](https://github.com/kevinhenryzz/realmimic) 的非官方 SuperMimic 派生实现，目标是让使用单张 A100 40GB 的研究者能够复现 G1 机器人的仿真动作跟踪训练。项目使用可微世界模型，保留上游方法和来源；不声称与论文完全相同的实验设置。
+A100Supermimic 是基于 [RealMimic](https://github.com/kevinhenryzz/realmimic) 的非官方 SuperMimic 派生实现，目标是让使用单张 A100 40GB 的研究者能够复现 G1 机器人的仿真动作跟踪训练。项目使用可微世界模型，保留上游方法和来源；不声称与论文完全相同的实验设置。
 
 **当前状态：早期发布。** 我们完成了一次单卡全库训练，并在独立环境完成了合成短训练、恢复、真实动作评测入口及文档训练命令的短训练和恢复检查。全库重评和 LAFAN1 外部评测已完成，权重尚未发布；完整的普通用户从零安装、数据下载和训练流程还需要验收。
 

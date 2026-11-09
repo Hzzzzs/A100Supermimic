@@ -276,7 +276,7 @@ class Trainer:
         if "a100mimic_rng" in ck:
             restore_rng(ck["a100mimic_rng"])
         else:
-            print("[WARN] checkpoint lacks A100Mimic RNG state; continuing with seeded RNG")
+            print("[WARN] checkpoint lacks A100Supermimic RNG state; continuing with seeded RNG")
         print(f"[INFO] resumed from {path} at iteration {self.iteration}")
 
     # ------------------------------------------------------------------ main loop

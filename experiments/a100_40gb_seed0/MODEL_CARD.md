@@ -1,4 +1,4 @@
-# A100Mimic seed 0 model card
+# A100Supermimic seed 0 model card
 
 This checkpoint is an unofficial RealMimic-derived simulation policy for a Unitree G1 humanoid. Given a reference motion, it produces actions to track that motion. It has not been tested on a physical robot. The checkpoint is not currently distributed.
 

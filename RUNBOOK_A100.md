@@ -1,6 +1,6 @@
-# A100Mimic working runbook
+# A100Supermimic working runbook
 
-The main installation, training and preliminary evaluation instructions are in [README.md](README.md). A100Mimic is an unofficial derivative of RealMimic; see [UPSTREAM.md](UPSTREAM.md), LICENSE and NOTICE.
+The main installation, training and preliminary evaluation instructions are in [README.md](README.md). A100Supermimic is an unofficial derivative of RealMimic; see [UPSTREAM.md](UPSTREAM.md), LICENSE and NOTICE.
 
 The one-GPU full BONES-SEED seed-0 run completed 86,000 iterations in 12 h 59 min 51 s of training-process time on an A100-SXM4-40GB. It used 4,096 environments, H32, a 2,048 policy batch, enabled self-collision, and the count-aware sampler inherited from RealMimic. The adaptive-horizon extension was off. Sampled `nvidia-smi` memory peaked at 21,189 MiB (2-second interval). The result is one run, not a multi-seed claim.
 
