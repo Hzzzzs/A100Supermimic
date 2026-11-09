@@ -1,0 +1,73 @@
+[project]
+name = "realmimic"
+version = "1.0.0"
+description = "Train a whole-body motion tracker for the Unitree G1 on one GPU and run it through NVIDIA's SONIC runtime"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  # Base framework, pinned to a fixed commit (see [tool.uv.sources]).
+  "mjlab",
+  # Declared directly so that our [tool.uv.sources] below apply (mjlab's own sources do not propagate).
+  "torch==2.14.1+cu126",
+  "warp-lang==1.18.0+cu12",
+  "mujoco-warp~=3.16.0",
+  "mujoco~=3.16.0",
+  "numpy",
+  "scipy>=1.15",
+  "tensorboard>=2.20.0",
+  "tyro>=1.0.1",
+  "huggingface-hub>=0.30",
+  "pandas",
+  "pyarrow",
+  "tqdm",
+  # CPU inference of SONIC's kinematic planner for offline reference generation.
+  "onnxruntime>=1.31.0",
+  # Policy export (already locked transitively through mjlab).
+  "onnx>=1.23",
+]
+
+[project.scripts]
+sm-train = "supermimic.scripts.train:main"
+
+[dependency-groups]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.8",
+  "pyright>=1.1.400",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+environments = ["sys_platform == 'linux' and platform_machine == 'x86_64'"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/supermimic", "src/realmimic", "src/a100mimic"]
+
+[tool.uv.sources]
+mjlab = { git = "https://github.com/mujocolab/mjlab", rev = "8bb2bc9e187797689ec82c78c35019afd2fd0376" }
+torch = { index = "pytorch-cu126", marker = "sys_platform == 'linux'" }
+warp-lang = { url = "https://github.com/NVIDIA/warp/releases/download/v1.18.0/warp_lang-1.18.0%2Bcu12-py3-none-manylinux_2_28_x86_64.whl", marker = "sys_platform == 'linux'" }
+
+[[tool.uv.index]]
+url = "https://pypi.org/simple"
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
+
+[[tool.uv.index]]
+name = "nvidia"
+url = "https://pypi.nvidia.com/"
+explicit = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["slow: long-running tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"

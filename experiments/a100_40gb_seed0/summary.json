@@ -1,0 +1,74 @@
+{
+  "status": "CANDIDATE_EVALUATION_PASS_SINGLE_SEED",
+  "description": "one fresh seed; candidate solver settings; training-library and external LAFAN1 evaluation",
+  "hardware": {
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "memory_total_bytes": 42406903808,
+    "sampled_peak_mib": 21189,
+    "memory_sampling_interval_seconds": 2
+  },
+  "training": {
+    "seed": 0,
+    "motion_count": 129491,
+    "iterations": 86000,
+    "policy_updates": 85500,
+    "process_elapsed_seconds": 46790.60975752585,
+    "checkpoint_sha256": "faa4108db6f088f4c498a03b23596aa3a2990bbcb85fa6e3d1fbbd5e99deed42",
+    "upstream_commit": "61f2973f6426255a8c844d6ca0c894eff4d8f45c",
+    "wm_warmup_iterations": 500,
+    "environments": 4096,
+    "horizon": 32,
+    "policy_batch": 2048,
+    "self_collision": true,
+    "diagnostics": {
+      "constraint_overflow_warning_log_intervals": 58,
+      "joint_velocity_anomaly_count_final": 1135,
+      "note": "Training log diagnostics, not evaluation failures; effects on the final model unknown."
+    }
+  },
+  "raw_evaluation": {
+    "clips": 129491,
+    "failed": 7,
+    "flagged": 8,
+    "failed_and_flagged": 0,
+    "mean_norm_return": 0.9543751609596252,
+    "solver_iterations": 10,
+    "solver_ls_iterations": 40,
+    "njmax": 250,
+    "num_envs": 256,
+    "chunk_size": 256
+  },
+  "lafan1": {
+    "scope": "LAFAN1 external once, frozen endpoint; source overlap not ruled out",
+    "solver_iterations": 32,
+    "solver_ls_iterations": 40,
+    "njmax": 500,
+    "flagged_clips": 0,
+    "clips": 40,
+    "failed": 13,
+    "failure_fraction": 0.325,
+    "mean_norm_return": 0.6767645390589794,
+    "frame_weighted_norm_return": 0.7082938841832604
+  },
+  "candidate_evaluation": {
+    "solver_iterations": 32,
+    "solver_ls_iterations": 40,
+    "njmax": 500,
+    "flagged_clips": 0,
+    "full": {
+      "clips": 129491,
+      "failed": 6,
+      "failure_fraction": 4.633526654362079e-05,
+      "mean_norm_return": 0.9543899718219768,
+      "frame_weighted_norm_return": 0.9579920024916955
+    },
+    "hard": {
+      "clips": 232,
+      "failed": 4,
+      "failure_fraction": 0.017241379310344827,
+      "mean_norm_return": 0.7833465461420946,
+      "frame_weighted_norm_return": 0.8025169478915691
+    },
+    "scope": "one fresh seed, full training-library evaluation; candidate solver32/ls40/nj500"
+  }
+}
